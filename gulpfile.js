@@ -173,6 +173,8 @@ gulp.task('html-deploy', function() {
 //cleans our dist directory in case things got deleted
 gulp.task('clean', function() {
     return shell.task([
+      'mkdir tmp',
+      'mv dist/.git tmp',
       'rm -rf dist'
     ]);
 });
@@ -184,7 +186,9 @@ gulp.task('scaffold', function() {
       'mkdir dist/fonts',
       'mkdir dist/images',
       'mkdir dist/scripts',
-      'mkdir dist/styles'
+      'mkdir dist/styles',
+      'mv tmp/.git dist',
+      'rm -rf tmp'
     ]
   );
 });

@@ -138,13 +138,9 @@
   }
 
   %#{$style-name} {
-    font: {
-      @else {
-        family: #{$style-name};
-      }
-      weight: normal;
-    };
-  }
+    font-family: #{$style-name};
+    weight: normal;
+  };
 }
 
 @mixin outline-radius($radius: 5px) {
